@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+
+:root {
+  --primary: #EF7B45;
+  --secondary: #042A2B;
+  --blue: #5EB1BF;
+  --blueLight: #CDEDF6;
+  --orange: #D84727;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar{
+  width: 6px;
+  border: 1px solid var(--White);
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: var(--backgroundDark);
+  border-radius: 5px;
+}
