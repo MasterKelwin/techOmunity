@@ -21,7 +21,6 @@ main {
     align-items: center;
     border-radius: 16px;
 
-
     &__logo {
         background-color: blue;
         width: 286px;
@@ -32,5 +31,9 @@ main {
         background-color: white;
         width: 286px;
         height: 286px;  
+
+        &__user-input{
+            background-color: red;
+        }
     }
 }
