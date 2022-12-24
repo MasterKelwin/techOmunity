@@ -1,17 +1,33 @@
 <main class="login">
     <div class="login__form">
         <img src="../../../assets/logo.png">
-        <form action="">
+        <form action="" (ngSubmit)="login()">
             <div class="login__form__input">
-                <input type="text" id="user"  form="loginFormGroup" required>
+                <input 
+                type="text" 
+                id="user" 
+                form="loginFormGroup" 
+                name="user"
+                [(ngModel)]="user"
+                required
+                >
                 <label for="user">Usuário</label>
             </div>
             <div class="login__form__input">
-                <input type="password" id="password" form="loginFormGroup" required> 
+                <input 
+                type="password" 
+                id="password" 
+                form="loginFormGroup" 
+                name="password"
+                [(ngModel)]="password" 
+                required
+                >
                 <label for="password">Senha</label>
             </div>
-            <button onclick="verifyUser()" class="login__form__button">Entrar</button>
+            <button  class="login__form__button" type="submit">Entrar</button>
         </form>
-        <p>Não tem uma conta? <a>Cadastre-se aqui.</a></p>
+        <p class="login__form__register">Não tem uma conta?
+             <a href="#" target="_blank" rel="next">Cadastre-se aqui.</a>
+        </p>
     </div>
 </main>
