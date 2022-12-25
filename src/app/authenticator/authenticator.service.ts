@@ -13,7 +13,7 @@ export class AuthenticatorService {
   ) { }
 
   authenticate(userName: string, password: string): Observable<any> {
-    return this.HttpClient.post('http://localhost:3000/user/login', {
+    return this.HttpClient.post('http://localhost:3000/users', {
       userName: userName,
       password: password
     });
