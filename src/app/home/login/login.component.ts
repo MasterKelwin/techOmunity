@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { AuthenticatorService } from 'src/app/authenticator/authenticator.service';
 
 @Component({
@@ -18,23 +19,17 @@ export class LoginComponent {
     ) {}
 
   ngOnInit(): void {
-    this.login()
   }
 
   login() {
-    this.authService.authenticate(this.user, this.password)
-    .subscribe(() => {
-      console.log('----------')
-      console.log('--logado--')
-      console.log('----------')
-    },
-    (error) => {
-      console.log('----------')
-      console.log({err: error})
-      console.log('----------')
-    })
+    if(this.authService.authenticate({user: this.user, password: this.password})) {
+      console.log('------------------')
+      console.log('LOGADO')
+      console.log('------------------')
+    } else {
+      console.log('------------------')
+      console.log('USUÁRIO E/OU SENHA INCORRETOS')
+      console.log('------------------')
+    }
   }
-
 }
-
-
