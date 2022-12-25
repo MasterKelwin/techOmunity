@@ -19,21 +19,17 @@ export class LoginComponent {
     ) {}
 
   ngOnInit(): void {
-
   }
 
   login() {
-    this.authService.authenticate(this.user, this.password).subscribe({
-      next: (user) => {
-        console.log('------------------')
-        console.log({ user: user })
-        console.log('------------------')
-      },
-      error: (err) => {
-        console.log('------------------')
-        console.log({ error: err })
-        console.log('------------------')
-      }
-    })
+    if(this.authService.authenticate({user: this.user, password: this.password})) {
+      console.log('------------------')
+      console.log('LOGADO')
+      console.log('------------------')
+    } else {
+      console.log('------------------')
+      console.log('USUÁRIO E/OU SENHA INCORRETOS')
+      console.log('------------------')
+    }
   }
 }
