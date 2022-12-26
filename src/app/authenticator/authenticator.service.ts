@@ -33,7 +33,7 @@ export class AuthenticatorService {
   }
   
   getUsers() {
-    return this.HttpClient.get('http://localhost:3000/users')
+    return this.HttpClient.get(`${this.apiURL}/users`)
       .subscribe({
         next: (res) => {
           return this.users = res;
