@@ -13,6 +13,9 @@ export class LoginComponent {
 
   public user: string = '';
   public password: string = '';
+  public loginError: boolean = false;
+  public userInvalid: boolean = false;
+  public passwordInvalid: boolean = false;
 
   constructor(
     private authService: AuthenticatorService
@@ -22,14 +25,20 @@ export class LoginComponent {
   }
 
   login() {
-    if(this.authService.authenticate({user: this.user, password: this.password})) {
-      console.log('------------------')
-      console.log('LOGADO')
-      console.log('------------------')
+    if(this.user.length > 8 && this.password.length > 8) {
+      if(this.authService.authenticate({user: this.user, password: this.password})) {
+        this.loginError = false;
+      } else {
+        this.loginError = true;
+        this.userInvalid = false;
+        this.passwordInvalid = false;
+      }
     } else {
-      console.log('------------------')
-      console.log('USUÁRIO E/OU SENHA INCORRETOS')
-      console.log('------------------')
+      this.user.length < 8 ? this.userInvalid = true : false;
+      this.password.length < 8 ? this.passwordInvalid = true : false;
     }
   }
+
 }
+
+
