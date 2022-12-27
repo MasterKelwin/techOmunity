@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticatorService } from 'src/app/authenticator/authenticator.service';
 
@@ -18,7 +19,8 @@ export class LoginComponent {
   public passwordInvalid: boolean = false;
 
   constructor(
-    private authService: AuthenticatorService
+    private authService: AuthenticatorService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class LoginComponent {
     if(this.user.length > 8 && this.password.length > 8) {
       if(this.authService.authenticate({user: this.user, password: this.password})) {
         this.loginError = false;
+        this.router.navigate(['feed']);
       } else {
         this.loginError = true;
         this.userInvalid = false;
