@@ -34,23 +34,23 @@
 
         </form>
 
-        <p 
+        <app-form-error 
         *ngIf="userInvalid"
         class="login__form__error"
-        >Usuário inválido!
-        </p>
+        error="Usuário inválido"
+        ></app-form-error>
 
-        <p 
+        <app-form-error 
         *ngIf="passwordInvalid"
         class="login__form__error"
-        >Senha inválida!
-        </p>
+        error="Senha inválida"
+        ></app-form-error>
 
-        <p 
+        <app-form-error 
         *ngIf="loginError"
         class="login__form__error"
-        >Usuário e/ou senha incorretos!
-        </p>
+        error="Usuário e/ou senha incorretos"
+        ></app-form-error>
 
         <p class="login__form__register">Não tem uma conta?
              <a href="#" target="_blank" rel="next">Cadastre-se aqui.</a>

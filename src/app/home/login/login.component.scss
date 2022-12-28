@@ -86,15 +86,6 @@ main {
             transition: .25s ease-in-out;
         }
 
-        &__error {
-            background-color: red;
-            margin-top: 20px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         &__register {
             background-color: var(--orange);
             margin-top: 20px;
