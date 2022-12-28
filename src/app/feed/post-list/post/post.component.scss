@@ -1,0 +1,50 @@
+article {
+    width: 475px;
+    min-height: 475px;
+    background-color: rgb(255, 255, 255, 0.80);
+    border-radius: 1rem;
+    padding: 0.5rem;
+
+    .post {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: .5rem;
+
+        &__origin {
+            width: 100%;
+            padding: 0 .5rem;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+
+            &__date {
+                font-size: .8rem;
+            }
+        }
+
+        &__title {
+            width: 100%;
+            height: 290px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            background-image: url("../../../../assets/codebg.png");
+
+            h3 {
+                background-color: #000;
+                color: var(--primary);
+                width: 100%;
+                padding: .5rem;
+                text-align: center;
+            }
+        }
+
+        &__description {
+            margin-bottom: .5rem;
+        }
+    }
+}
