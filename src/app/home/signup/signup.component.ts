@@ -3,16 +3,13 @@ import { Router } from '@angular/router';
 import { AuthenticatorService } from 'src/app/authenticator/authenticator.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-
-export class LoginComponent {
-
+export class SignupComponent {
   public user: string = '';
   public password: string = '';
-  public loginError: boolean = false;
   public userInvalid: boolean = false;
   public passwordInvalid: boolean = false;
 
@@ -24,26 +21,13 @@ export class LoginComponent {
   ngOnInit(): void {
   }
 
-  login() {
+  signup() {
     if(this.user.length > 8 && this.password.length > 8) {
-      if(this.authService.authenticate({user: this.user, password: this.password})) {
-        this.loginError = false;
-        this.router.navigate(['feed']);
-      } else {
-        this.loginError = true;
-        this.userInvalid = false;
-        this.passwordInvalid = false;
-      }
+      this.authService.signup(this.user, this.password)
+      this.router.navigate(['home'])
     } else {
       this.user.length < 8 ? this.userInvalid = true : false;
       this.password.length < 8 ? this.passwordInvalid = true : false;
     }
   }
-
-  signup() {
-    this.router.navigate(['signup'])
-  }
-
 }
-
-

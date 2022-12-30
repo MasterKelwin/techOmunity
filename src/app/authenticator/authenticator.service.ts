@@ -46,7 +46,7 @@ export class AuthenticatorService {
       })
   }
 
-  register(userName: string, password: string): Observable<any> {
+  signup(userName: string, password: string): Observable<any> {
     return this.HttpClient.post(`${this.apiURL}/users`, {
       userName: userName,
       password: password

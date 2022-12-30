@@ -7,15 +7,7 @@ main {
     background-image: url("../../../assets/bg\ --primary.png");
 }
 
-.login {
-    img {
-        width: 320px;
-        margin-bottom: 2em;
-
-        @media (max-width: 600px) {
-            max-width: 260px;
-          }    
-    }
+.signup {
 
     &__form{
         position:absolute;
@@ -23,6 +15,11 @@ main {
         border-radius:3px;
         padding:70px 100px;
         border-radius: 10%;
+        width: 520px;
+
+        h2 {
+            color: #e74c3c;
+        }
 
         @media (max-width: 600px) {
           max-width: 360px;
