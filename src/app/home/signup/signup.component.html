@@ -1,14 +1,14 @@
-<main class="login">
-    <div class="login__form">
+<main class="signup">
+    <div class="signup__form">
 
-        <img src="../../../assets/logo.png">
+        <h2>Cadastre-se e fique por dentro das novidades no mundo da tecnologia!</h2>
 
-        <form action="" (ngSubmit)="login()" #loginForm="ngForm">
+        <form action="" (ngSubmit)="signup()" #signupForm="ngForm">
 
-            <div class="login__form__input">
+            <div class="signup__form__input">
                 <input 
                 type="text" 
-                form="loginFormGroup" 
+                form="signupFormGroup" 
                 name="user"
                 [(ngModel)]="user"
                 required
@@ -16,10 +16,10 @@
                 <label for="user">Usuário</label>
             </div>
 
-            <div class="login__form__input">
+            <div class="signup__form__input">
                 <input 
                 type="password" 
-                form="loginFormGroup" 
+                form="signupFormGroup" 
                 name="password"
                 [(ngModel)]="password" 
                 required
@@ -28,7 +28,7 @@
             </div>
 
             <button 
-            class="login__form__button" 
+            class="signup__form__button" 
             type="submit"
             >Entrar</button>
 
@@ -44,13 +44,8 @@
         error="Senha inválida"
         ></app-form-error>
 
-        <app-form-error 
-        *ngIf="loginError"
-        error="Usuário e/ou senha incorretos"
-        ></app-form-error>
-
-        <p class="login__form__register">Não tem uma conta?
-        <button (click)="signup()" >Cadastre-se aqui.</button>
+        <p class="signup__form__register">Não tem uma conta?
+             <a href="#" target="_blank" rel="next">Cadastre-se aqui.</a>
         </p>
     </div>
 </main>
