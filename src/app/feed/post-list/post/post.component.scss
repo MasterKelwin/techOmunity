@@ -5,6 +5,12 @@ article {
     border-radius: 1rem;
     padding: 0.5rem;
 
+    @media (max-width: 600px) {
+        max-width: 340px;
+        min-height: 340px;
+        padding: 0.5rem;
+      }      
+
     .post {
         display: flex;
         justify-content: center;
@@ -45,6 +51,8 @@ article {
 
         &__description {
             margin-bottom: .5rem;
+            text-align: justify;
+            font-weight: 700;
         }
     }
 }
