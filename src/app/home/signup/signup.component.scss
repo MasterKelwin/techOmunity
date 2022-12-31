@@ -16,9 +16,12 @@ main {
         padding:70px 100px;
         border-radius: 10%;
         width: 520px;
+        height: 420px;
 
         h2 {
-            color: #e74c3c;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         @media (max-width: 600px) {
