@@ -22,9 +22,9 @@ export class SignupComponent {
   }
 
   signup() {
-    if(this.user.length > 8 && this.password.length > 8) {
+    if(this.user.length >= 8 && this.password.length >= 8) {
       this.authService.signup(this.user, this.password)
-      this.router.navigate(['home'])
+      // this.router.navigate(['home'])
     } else {
       this.user.length < 8 ? this.userInvalid = true : false;
       this.password.length < 8 ? this.passwordInvalid = true : false;
