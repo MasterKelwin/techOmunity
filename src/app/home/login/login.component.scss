@@ -89,13 +89,14 @@ main {
         &__register {
             background-color: var(--orange);
             margin-top: 20px;
-            button {
+            a {
                 color: var(--blueLight);
                 background: none;
                 border: none;
                 font-size: 1rem;
+                text-decoration: none;
             }
-            button:hover {
+            a:hover {
                 cursor: pointer;
                 color: var(--blue);
             }

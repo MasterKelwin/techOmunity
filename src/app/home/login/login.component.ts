@@ -39,11 +39,6 @@ export class LoginComponent {
       this.password.length < 8 ? this.passwordInvalid = true : false;
     }
   }
-
-  signup() {
-    this.router.navigate(['home/signup'])
-  }
-
 }
 
 

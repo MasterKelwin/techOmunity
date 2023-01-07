@@ -36,7 +36,4 @@ export class SignupComponent {
     password == passwordConfirm ? true : this.passwordsDontMatch = false;
   }
 
-  login() {
-    this.router.navigate(['/home'])
-  }
 }
