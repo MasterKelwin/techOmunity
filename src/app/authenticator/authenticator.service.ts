@@ -46,12 +46,5 @@ export class AuthenticatorService {
       })
   }
 
-  signup(userName: string, password: string): Observable<any> {
-    return this.HttpClient.post(`${this.apiURL}/users`, {
-      user: userName,
-      password: password
-    });
-  }
-
   
 }
