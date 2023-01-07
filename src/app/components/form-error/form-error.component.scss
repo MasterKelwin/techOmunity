@@ -6,3 +6,7 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+p:last-child {
+    margin-bottom: 20px;
+}

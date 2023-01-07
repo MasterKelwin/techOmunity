@@ -27,22 +27,39 @@
                 <label for="password">Senha</label>
             </div>
 
+            
+            <div class="signup__form__input">
+                <input 
+                type="password" 
+                form="signupFormGroup" 
+                name="password"
+                [(ngModel)]="password" 
+                required
+                >
+                <label for="password">Confirme sua senha</label>
+            </div>
+
+            <app-form-error 
+            *ngIf="userInvalid"
+            error="Usuário inválido"
+            ></app-form-error>
+    
+            <app-form-error 
+            *ngIf="passwordInvalid || passwordsDontMatch"
+            error="Senha inválida"
+            ></app-form-error>
+
             <button 
             class="signup__form__button" 
             type="submit"
             >Cadastrar
             </button>
 
+            <p class="signup__form__login">Já é membro?
+                <button (click)="login()">Faça login!</button>
+            </p>
+
         </form>
 
-        <app-form-error 
-        *ngIf="userInvalid"
-        error="Usuário inválido"
-        ></app-form-error>
-
-        <app-form-error 
-        *ngIf="passwordInvalid"
-        error="Senha inválida"
-        ></app-form-error>
     </div>
 </main>

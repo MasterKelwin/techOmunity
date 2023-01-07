@@ -10,24 +10,33 @@ import { AuthenticatorService } from 'src/app/authenticator/authenticator.servic
 export class SignupComponent {
   public user: string = '';
   public password: string = '';
+  public passwordConfirm: string = '';
   public userInvalid: boolean = false;
   public passwordInvalid: boolean = false;
+  public passwordsDontMatch: boolean = false;
 
   constructor(
-    private authService: AuthenticatorService,
     private router: Router
-    ) {}
+  ) {}
 
   ngOnInit(): void {
   }
 
   signup() {
     if(this.user.length >= 8 && this.password.length >= 8) {
-      this.authService.signup(this.user, this.password)
+      // this.authService.signup(this.user, this.password)
       // this.router.navigate(['home'])
     } else {
       this.user.length < 8 ? this.userInvalid = true : false;
       this.password.length < 8 ? this.passwordInvalid = true : false;
     }
+  }
+
+  verifyPasswords(password: string, passwordConfirm: string){
+    password == passwordConfirm ? true : this.passwordsDontMatch = false;
+  }
+
+  login() {
+    this.router.navigate(['/home'])
   }
 }

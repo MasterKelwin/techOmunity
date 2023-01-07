@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "kelwin.hollunder",
+      "password": "senhaTeste"
+    },
+    {
+      "id": 2,
+      "user": "dara.marotto",
+      "password": "teste123"
+    },
+    {
+      "id": 3,
+      "user": "daniel.carvalho",
+      "password": "123teste"
+    }
+  ]
+}

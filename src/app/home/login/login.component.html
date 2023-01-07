@@ -27,27 +27,27 @@
                 <label for="password">Senha</label>
             </div>
 
+            <app-form-error 
+            *ngIf="userInvalid"
+            error="Usuário inválido"
+            ></app-form-error>
+    
+            <app-form-error 
+            *ngIf="passwordInvalid"
+            error="Senha inválida"
+            ></app-form-error>
+    
+            <app-form-error 
+            *ngIf="loginError"
+            error="Usuário e/ou senha incorretos"
+            ></app-form-error>
+
             <button 
             class="login__form__button" 
             type="submit"
             >Entrar</button>
 
         </form>
-
-        <app-form-error 
-        *ngIf="userInvalid"
-        error="Usuário inválido"
-        ></app-form-error>
-
-        <app-form-error 
-        *ngIf="passwordInvalid"
-        error="Senha inválida"
-        ></app-form-error>
-
-        <app-form-error 
-        *ngIf="loginError"
-        error="Usuário e/ou senha incorretos"
-        ></app-form-error>
 
         <p class="login__form__register">Não tem uma conta?
         <button (click)="signup()" >Cadastre-se aqui.</button>
