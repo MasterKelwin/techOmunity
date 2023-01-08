@@ -3,14 +3,12 @@
 
         <h2>Cadastre-se e fique por dentro das novidades no mundo da tecnologia!</h2>
 
-        <form action="" (ngSubmit)="signup()" #signupForm="ngForm">
+        <form [formGroup]="newUserForm" (submit)="signup()">
 
             <div class="signup__form__input">
                 <input 
                 type="text" 
-                form="signupFormGroup" 
-                name="user"
-                [(ngModel)]="user"
+                formControlName="user"
                 required
                 >
                 <label for="user">Usuário</label>
@@ -19,9 +17,7 @@
             <div class="signup__form__input">
                 <input 
                 type="password" 
-                form="signupFormGroup" 
-                name="password"
-                [(ngModel)]="password" 
+                formControlName="password"
                 required
                 >
                 <label for="password">Senha</label>
@@ -31,9 +27,7 @@
             <div class="signup__form__input">
                 <input 
                 type="password" 
-                form="signupFormGroup" 
-                name="password"
-                [(ngModel)]="password" 
+                formControlName="passwordConfirm"
                 required
                 >
                 <label for="password">Confirme sua senha</label>

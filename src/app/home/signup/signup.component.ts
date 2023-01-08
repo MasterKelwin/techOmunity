@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticatorService } from 'src/app/authenticator/authenticator.service';
+import { userInterface } from 'src/app/interfaces/user';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,21 +18,27 @@ export class SignupComponent {
   public passwordInvalid: boolean = false;
   public passwordsDontMatch: boolean = false;
 
+  public newUserForm!: FormGroup;
+
   constructor(
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private service: SignupService
   ) {}
 
   ngOnInit(): void {
+    this.newUserForm = this.formBuilder.group({
+      user: [''],
+      password: [''],
+      passwordConfirm: ['']
+    })
   }
 
   signup() {
-    if(this.user.length >= 8 && this.password.length >= 8) {
-      // this.authService.signup(this.user, this.password)
-      // this.router.navigate(['home'])
-    } else {
-      this.user.length < 8 ? this.userInvalid = true : false;
-      this.password.length < 8 ? this.passwordInvalid = true : false;
-    }
+    const newUser = this.newUserForm.getRawValue() as userInterface;
+    console.log('------------------')
+    console.log({ response: newUser })
+    console.log('------------------')
   }
 
   verifyPasswords(password: string, passwordConfirm: string){
